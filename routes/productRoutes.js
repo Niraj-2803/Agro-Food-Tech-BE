@@ -3,6 +3,7 @@ const router = express.Router();
 const {
   createProduct,
   getAllProducts,
+  getProductById,
   updateProduct,
   deleteProduct,
 } = require('../controllers/productController');
@@ -99,6 +100,31 @@ router.get('/', getAllProducts);
  *               $ref: '#/components/schemas/Product'
  */
 router.post('/', createProduct);
+
+/**
+ * @swagger
+ * /api/products/{id}:
+ *   get:
+ *     summary: Get a product by ID
+ *     tags: [Products]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: Product ID
+ *     responses:
+ *       200:
+ *         description: Product object
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Product'
+ *       404:
+ *         description: Product not found
+ */
+router.get('/:id', getProductById);
 
 /**
  * @swagger
