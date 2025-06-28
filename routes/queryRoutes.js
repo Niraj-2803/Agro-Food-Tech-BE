@@ -15,14 +15,29 @@ const {
  *       properties:
  *         _id:
  *           type: string
- *         name:
+ *         fullName:
  *           type: string
- *         contact:
+ *         emailAddress:
  *           type: string
- *         query:
+ *         phoneNumber:
  *           type: string
- *         __v:
- *           type: integer
+ *         companyName:
+ *           type: string
+ *         interestedIn:
+ *           type: string
+ *           enum:
+ *             - WholeSale Purchase
+ *             - Retail Information
+ *             - Distribution Partnership
+ *             - Other
+ *         message:
+ *           type: string
+ *         createdAt:
+ *           type: string
+ *           format: date-time
+ *         updatedAt:
+ *           type: string
+ *           format: date-time
  */
 
 /**
@@ -38,11 +53,18 @@ const {
  *           schema:
  *             type: object
  *             properties:
- *               name:
+ *               fullName:
  *                 type: string
- *               contact:
+ *               emailAddress:
  *                 type: string
- *               query:
+ *               phoneNumber:
+ *                 type: string
+ *               companyName:
+ *                 type: string
+ *               interestedIn:
+ *                 type: string
+ *                 enum: [WholeSale Purchase, Retail Information, Distribution Partnership, Other]
+ *               message:
  *                 type: string
  *     responses:
  *       201:
