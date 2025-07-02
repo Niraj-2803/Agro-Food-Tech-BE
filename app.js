@@ -12,10 +12,12 @@ app.use(bodyParser.json());
 const productRoutes = require('./routes/productRoutes');
 const authRoutes = require('./routes/authRoutes');
 const queryRoutes = require('./routes/queryRoutes');
+const imageRoutes = require('./routes/imageRoutes');
 
 app.use('/api/products', productRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/queries', queryRoutes);
+app.use('/api/image', imageRoutes);
 
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('MongoDB connected'))
